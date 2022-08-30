@@ -13,11 +13,18 @@ where H is the feature matrix get in each layer and W is the weight matrix and s
 From the picture above, we can get the main structure of the traffic Gan that consists of four dynamic layer in Generator Part and Discriminator Part. In Generator Part, we concatenate the feature vectors and noise to get the predicted value for number of visits. Then we put the true value and predicted value to the discriminator part and get the probability of the fake series. We have trained our data using the Traffic GAN but find that the MSE loss cannot converge in training. In this way, we try to revise the model in two ways: 
 1. Do not use the mechanism of GAN and directly use the Generator part with backpropagtion of MSE loss. 
 2. Use distance function as the indicator of the correlation matrix instead of directly calucating the correlation of time series for each region. 
+3. Add the Temporal Analysis by defining the time step and concatenate each features of different week in the time step. 
 ### Structure of Revised Model
-![3](https://user-images.githubusercontent.com/59796732/187326090-91a26e7c-7b1b-4e82-8a82-4c998f10f7e4.png)
+![3](https://user-images.githubusercontent.com/59796732/187327347-bba8ffe0-594d-4377-a66f-fef2df1ba5db.png)
 
 ## CNN 
-Finally, we segment the data using R Studio with grids of 100 * 100. For each grids, we calucate its features by the mean feature of all the nearby cbg region. For the grid of sea area, we all assign 0 to it and then go through the backpropgation. The CNN part consists of four layer where each layer includes convolutional nettral network, Batch Normalization, Dropout and Activation Function.  
+Finally, we segment the data using R Studio with grids of 100 * 100: \
+![image](https://user-images.githubusercontent.com/59796732/187326645-a645f68a-a44b-469c-9e8e-ed978d480fa8.png)
+
+For each grids, we calucate its features by the mean feature of all the nearby cbg region. For the grid of sea area, we all assign 0 to it and then go through the backpropgation. The CNN part consists of four layer where each layer includes convolutional nettral network, Batch Normalization, Dropout and Activation Function. 
+### Structure of CNN
+![2](https://user-images.githubusercontent.com/59796732/187326768-65159f9c-7301-475c-bb0c-da6c888f2b44.PNG)
+
 ## Summary of Models 
 
 | Model Name  | 
