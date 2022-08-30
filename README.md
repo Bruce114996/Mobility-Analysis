@@ -35,6 +35,13 @@ For each grids, we calucate its features by the mean feature of all the nearby c
 | Revised Traffic GAN      | 3.21   | 3.51    |
 | CNN     |  0.08 | 0.09| 
 
+# Visualization 
+## Result of Traffic GAN
+![Test_loss_Traffic_gan_mse (1)](https://user-images.githubusercontent.com/59796732/187539824-cbf2411a-0d1f-4604-9273-7f2cbe394da5.png)
+
+## Result of CNN
+![图片1](https://user-images.githubusercontent.com/59796732/187539749-4c353f58-3a1a-47a3-973d-e87d16fb8450.png)
+
 # Conclusion 
-Our method can reduce the mse loss of traffic GAN but fail to predict the value for some specific regions. Therefore, for the safegraph data, segmenting it into square region and then predict it is the optimal choices. 
+Our method can reduce the mse loss of traffic GAN but fail to predict the value for some specific regions. Therefore, for the safegraph data, segmenting it into square region and then predict it is the optimal choice. 
 
