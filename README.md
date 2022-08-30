@@ -25,13 +25,16 @@ For each grids, we calucate its features by the mean feature of all the nearby c
 ### Structure of CNN
 ![2](https://user-images.githubusercontent.com/59796732/187326768-65159f9c-7301-475c-bb0c-da6c888f2b44.PNG)
 
-## Summary of Models 
-
-| Model Name  | 
-| ---------- |
-| ARIMA     |
-| LSTM    |
-| Traffic GAN     |
-| Revised Traffic GAN      |
-| CNN     |
 # Result 
+
+| Model Name  | Training Loss | Testing Loss
+| ---------- | ---------- | ---------- |
+| ARIMA     | 3.46 | / |
+| LSTM    | 0.13 | 0.42 |
+| Traffic GAN     | 5.05    |  /    |
+| Revised Traffic GAN      | 3.21   | 3.51    |
+| CNN     |  0.08 | 0.09| 
+
+# Conclusion 
+Our method can reduce the mse loss of traffic GAN but fail to predict the value for some specific regions. Therefore, for the safegraph data, segmenting it into square region and then predict it is the optimal choices. 
+
